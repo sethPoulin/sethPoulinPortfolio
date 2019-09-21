@@ -41,18 +41,24 @@ a {
 
 a.button {
     border-style: none;
-    color: black;
+    color: white;
+    // color: black;
     outline: none;
     display: inline-block;
     padding: 13px 28px;
-    background-color: $green;
+    background-color: $darkGrey;
+    // background-color: $green;
     max-width: 240px;
     margin: 0 auto;
     margin-top: 20px;
-    border: 2px solid $green;
+    // border: 2px solid white;
+    // border: 2px solid $green;
     &:hover {
-        background-color: white;
-        color: $darkGrey;
+        background-color: $green;
+        // background-color: white;
+        color: white;
+        // color: $darkGrey;
+        // border: 2px solid $green;
     }
     // text-align: center;
 
@@ -239,7 +245,8 @@ header {
         margin-top: 72px;
         overflow: hidden;
         // box-shadow: 8px 8px 6px -6px #777;
-        box-shadow: -12px -12px $green;
+        // box-shadow: -12px -12px $green;
+        box-shadow: -12px -12px white;
 
         img {
             max-width: 100%;

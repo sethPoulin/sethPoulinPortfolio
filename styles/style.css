@@ -314,20 +314,19 @@ h3 {
 
 a.button {
   border-style: none;
-  color: black;
+  color: white;
   outline: none;
   display: inline-block;
   padding: 13px 28px;
-  background-color: #a1b541;
+  background-color: #686868;
   max-width: 240px;
   margin: 0 auto;
   margin-top: 20px;
-  border: 2px solid #a1b541;
 }
 
 a.button:hover {
-  background-color: white;
-  color: #686868;
+  background-color: #a1b541;
+  color: white;
 }
 
 li {
@@ -509,8 +508,8 @@ header svg.chevron {
   width: 220px;
   margin-top: 72px;
   overflow: hidden;
-  -webkit-box-shadow: -12px -12px #a1b541;
-          box-shadow: -12px -12px #a1b541;
+  -webkit-box-shadow: -12px -12px white;
+          box-shadow: -12px -12px white;
 }
 
 .about .photoContainer img {
