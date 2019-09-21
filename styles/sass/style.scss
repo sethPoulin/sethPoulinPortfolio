@@ -197,9 +197,14 @@ header {
 
     a.chevron {
         position: absolute;
-        left: 0;
-        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
         bottom: 20px;
+        width: 100px;
+
+        &:hover svg.chevron {
+            fill: $green;
+        }
     }
 
     svg.chevron {
@@ -276,11 +281,14 @@ header {
 }
 
 .work {
+
+    *{border: 1px solid tomato}
     .imageContainer {
-        width: 400px;
+        width: 700px;
     }
 
     img {
         max-width: 100%;
     }
+
 }
