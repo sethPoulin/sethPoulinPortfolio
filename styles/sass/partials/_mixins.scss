@@ -26,6 +26,12 @@
     font-family: $raleway;
 }
 
+%h4 {
+    @extend %h3;
+    font-size: 3rem;
+    color: black;
+}
+
 %button {
     @extend %h1;
     font-size: 2rem;

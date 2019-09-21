@@ -34,6 +34,10 @@ h3 {
     color: black;
 }
 
+h4 {
+    @extend %h4;
+}
+
 a {
     @extend %a;
     
@@ -157,6 +161,8 @@ header {
         }
     }
 
+   
+
 
 
     svg.logo {
@@ -267,8 +273,14 @@ header {
         margin: unset;
         margin-top: 30px;
     }
+}
 
-    
+.work {
+    .imageContainer {
+        width: 400px;
+    }
 
-    
+    img {
+        max-width: 100%;
+    }
 }

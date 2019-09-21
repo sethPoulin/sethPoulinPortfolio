@@ -221,7 +221,7 @@ textarea {
   overflow: hidden;
 }
 
-p, h2, h3, a, h1 {
+p, h2, h4, h3, a, h1 {
   font-family: "Roboto", sans-serif;
   font-size: 5.8rem;
   font-weight: 700;
@@ -236,11 +236,16 @@ p, h2 {
   letter-spacing: 1.5rem;
 }
 
-h3 {
+h4, h3 {
   font-size: 3.5rem;
   text-transform: unset;
   letter-spacing: .3rem;
   font-family: "Raleway", sans-serif;
+}
+
+h4 {
+  font-size: 3rem;
+  color: black;
 }
 
 a {
@@ -534,4 +539,12 @@ header svg.chevron {
 .about .button {
   margin: unset;
   margin-top: 30px;
+}
+
+.work .imageContainer {
+  width: 400px;
+}
+
+.work img {
+  max-width: 100%;
 }
