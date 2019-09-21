@@ -1,0 +1,70 @@
+@mixin border($thickness:1px,$style:solid,$colour:tomato){
+    border: $thickness $style $colour;
+}
+
+%h1 {
+    font-family: $roboto;
+    font-size: 5.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: .8rem;
+}
+
+%h2 {
+    @extend %h1;
+    font-size: 2.7rem;
+    font-weight: 100;
+    letter-spacing: 1.5rem;
+}
+
+%h3 {
+    @extend %h1;
+    font-size: 3.5rem;
+    text-transform: unset;
+    letter-spacing: .3rem;
+    font-family: $raleway;
+}
+
+%button {
+    @extend %h1;
+    font-size: 2rem;
+}
+
+%a {
+    @extend %h1;
+    font-family: $raleway;
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+}
+
+%p {
+    @extend %h2;
+    font-weight:100;
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
+    text-transform: unset;
+}
+
+%underline {
+
+    &::after{
+        content: '';
+        height: 2px;
+        width: 80%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: $green;
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    &:hover::after { 
+        opacity: 1;
+    }
+}
+

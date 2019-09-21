@@ -1,0 +1,267 @@
+@import "partials/setup.scss";
+@import "partials/variables.scss";
+@import "partials/mixins.scss";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    // background-color: red;
+}
+
+.skip-link { position: absolute; left: -1000px; top: 5px; z-index: 999; background: white; color: black;}.skip-link:focus {left: 0;}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    @extend %h1;
+    color: white;
+}
+
+h2 {
+    @extend %h2;
+}
+
+h3 {
+    @extend %h3;
+    color: black;
+}
+
+a {
+    @extend %a;
+    
+}
+
+a.button {
+    border-style: none;
+    color: black;
+    outline: none;
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: $green;
+    max-width: 240px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 2px solid $green;
+    &:hover {
+        background-color: white;
+        color: $darkGrey;
+    }
+    // text-align: center;
+
+}
+
+p {
+    @extend %p;
+}
+
+li {
+    padding-bottom: 0;
+}
+
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+    width: 100%;
+    position: relative;
+
+    // * {
+    //     @include border;
+    // }
+    background-color: $darkGrey;
+
+    .navBar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    nav {
+        flex-basis: 50%;
+        // flex-shrink: 1;
+    }
+
+    .navBarLeft {
+        flex-basis: 50%;
+        flex-shrink: 1;
+        text-align: left;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        // width: 100%; 
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    // p.logo {
+    //     font-size: 3rem;
+    // }
+
+    a:not(.chevron) {
+        padding: 10px 10px 10px 30px;
+        @extend %underline;
+    }
+    
+
+    h1 {
+        // margin-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    h2 {
+        margin-bottom: 45px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            width: 40%;
+            margin: 0 auto;
+            background-color: $green;
+            height: 4px;
+
+        }
+    }
+
+
+
+    svg.logo {
+        width: 50px;
+        fill: none;
+        stroke: white;
+        stroke-width: 10px; 
+        
+    }
+
+    a.logo {
+        padding: 0;
+        // padding-top: 0;
+        @extend %underline;
+        position: relative;
+        left: 0;
+        right: 0;
+        
+        &::after {
+            // opacity: 1;
+            transform: translateX(-15%);
+            width: 140%;
+        }
+    }
+
+    p {
+        margin-bottom: 30px;
+        max-width: 550px;
+        margin: 0 auto;
+        line-height: 3rem;
+    }
+
+    a.chevron {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+    }
+
+    svg.chevron {
+        width: 50px;
+        fill: rgba(255,255,255,0.3);
+        // stroke: white;
+        stroke-width: 10px; 
+    }
+
+    // svg::after {
+        
+    // } 
+}  
+
+.about {
+
+    background-color: $midGrey;
+    padding: 70px 0;
+
+    .wrapper {
+        display: flex;
+    }
+
+    p {
+        color: black;
+        font-weight: 300;
+        line-height:2.8rem;
+    }
+
+    h3 {
+        padding-bottom: 30px;
+    }
+
+    .aboutCopy {
+        width: 60%;
+    }
+
+    .aboutPhoto {
+        width: 40%;
+        // margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .photoContainer {
+        // border: 2px solid black;
+        height: 240px;
+        width: 220px;
+        margin-top: 72px;
+        overflow: hidden;
+        // box-shadow: 8px 8px 6px -6px #777;
+        box-shadow: -12px -12px $green;
+
+        img {
+            max-width: 100%;
+            transform: scale(1.6);
+            object-position: 10px;
+            // transform: translateX(10px)
+        }
+    }
+
+    .copyAndButton {
+        display: flex;
+        flex-wrap: wrap;
+        // height: 200px;
+        justify-content: left;
+    }
+
+    .button {
+        margin: unset;
+        margin-top: 30px;
+    }
+
+    
+
+    
+}
