@@ -221,7 +221,7 @@ textarea {
   overflow: hidden;
 }
 
-p, h2, h4, h3, a, h1 {
+p, h2, h5, h4, h3, a, h1 {
   font-family: "Roboto", sans-serif;
   font-size: 5.8rem;
   font-weight: 700;
@@ -236,16 +236,24 @@ p, h2 {
   letter-spacing: 1.5rem;
 }
 
-h4, h3 {
+h5, h4, h3 {
   font-size: 3.5rem;
   text-transform: unset;
   letter-spacing: .3rem;
   font-family: "Raleway", sans-serif;
 }
 
-h4 {
+h5, h4 {
   font-size: 3rem;
   color: black;
+}
+
+h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 3rem;
 }
 
 a {
@@ -254,13 +262,16 @@ a {
   text-decoration: none;
   font-weight: 400;
   letter-spacing: 0.2rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 p {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 1.7rem;
   letter-spacing: 0.2rem;
   text-transform: unset;
+  line-height: 3rem;
 }
 
 header a:not(.chevron)::after, header a.logo::after {
@@ -275,6 +286,8 @@ header a:not(.chevron)::after, header a.logo::after {
   opacity: 0;
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 header a:not(.chevron):hover::after, header a.logo:hover::after {
@@ -302,6 +315,14 @@ body {
 
 .skip-link:focus {
   left: 0;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .wrapper {
@@ -457,7 +478,6 @@ header p {
   margin-bottom: 30px;
   max-width: 550px;
   margin: 0 auto;
-  line-height: 3rem;
 }
 
 header a.chevron {
@@ -477,11 +497,13 @@ header svg.chevron {
   width: 50px;
   fill: rgba(255, 255, 255, 0.3);
   stroke-width: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .about {
-  background-color: #c7c7c7;
-  padding: 70px 0;
+  background-color: whitesmoke;
+  padding: 100px 0;
 }
 
 .about .wrapper {
@@ -492,7 +514,6 @@ header svg.chevron {
 
 .about p {
   color: black;
-  font-weight: 300;
   line-height: 2.8rem;
 }
 
@@ -519,8 +540,8 @@ header svg.chevron {
   width: 220px;
   margin-top: 72px;
   overflow: hidden;
-  -webkit-box-shadow: -12px -12px white;
-          box-shadow: -12px -12px white;
+  -webkit-box-shadow: -12px -12px #a1b541;
+          box-shadow: -12px -12px #a1b541;
 }
 
 .about .photoContainer img {
@@ -547,14 +568,60 @@ header svg.chevron {
   margin-top: 30px;
 }
 
-.work * {
-  border: 1px solid tomato;
+.work {
+  background-color: #c7c7c7;
+}
+
+.work .wrapper {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 400px;
+}
+
+.work h4 {
+  padding-bottom: 15px;
+}
+
+.work p {
+  color: black;
+  letter-spacing: 0.1rem;
 }
 
 .work .imageContainer {
-  width: 700px;
+  border: 1px solid tomato;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.work .imageContainer * {
+  border: 1px solid tomato;
+}
+
+.work .copy {
+  width: 50%;
+  padding-top: 40px;
+  position: relative;
 }
 
 .work img {
   max-width: 100%;
+}
+
+.work .button {
+  background-color: #686868;
+  color: white;
+  margin-right: 10px;
+}
+
+.work .memoryGame {
+  background-color: whitesmoke;
 }

@@ -32,6 +32,15 @@
     color: black;
 }
 
+%h5 {
+    @extend %h4;
+    font-family:$roboto;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 3rem;
+}
+
 %button {
     @extend %h1;
     font-size: 2rem;
@@ -44,14 +53,16 @@
     text-decoration: none;
     font-weight: 400;
     letter-spacing: 0.2rem;
+    transition: 0.2s;
 }
 
 %p {
     @extend %h2;
-    font-weight:100;
+    font-weight:300;
     font-size: 1.7rem;
     letter-spacing: 0.2rem;
     text-transform: unset;
+    line-height: 3rem;
 }
 
 %underline {
@@ -67,6 +78,7 @@
         background-color: $green;
         opacity: 0;
         transform: translateX(20px);
+        transition: 0.2s;
     }
 
     &:hover::after { 
