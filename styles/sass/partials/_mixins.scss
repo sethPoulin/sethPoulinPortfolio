@@ -4,11 +4,12 @@
 
 %h1 {
     font-family: $roboto;
+    // font-family: $raleway;
     font-size: 5.8rem;
     font-weight: 700;
-    text-transform: uppercase;
     color: white;
     letter-spacing: .8rem;
+    text-transform: uppercase;
 }
 
 %h2 {
@@ -16,6 +17,8 @@
     font-size: 2.7rem;
     font-weight: 100;
     letter-spacing: 1.5rem;
+    font-family: $roboto;
+    text-transform: uppercase;
 }
 
 %h3 {
@@ -54,6 +57,7 @@
     font-weight: 400;
     letter-spacing: 0.2rem;
     transition: 0.2s;
+    text-transform: uppercase;
 }
 
 %p {

@@ -225,15 +225,17 @@ p, h2, h5, h4, h3, a, h1 {
   font-family: "Roboto", sans-serif;
   font-size: 5.8rem;
   font-weight: 700;
-  text-transform: uppercase;
   color: white;
   letter-spacing: .8rem;
+  text-transform: uppercase;
 }
 
 p, h2 {
   font-size: 2.7rem;
   font-weight: 100;
   letter-spacing: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
 }
 
 h5, h4, h3 {
@@ -264,6 +266,7 @@ a {
   letter-spacing: 0.2rem;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  text-transform: uppercase;
 }
 
 p {
@@ -476,7 +479,7 @@ header a.logo::after {
 
 header p {
   margin-bottom: 30px;
-  max-width: 550px;
+  max-width: 530px;
   margin: 0 auto;
 }
 
@@ -575,7 +578,7 @@ header svg.chevron {
 .work .wrapper {
   width: 80%;
   margin: 0 auto;
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .work h4 {
@@ -588,7 +591,6 @@ header svg.chevron {
 }
 
 .work .imageContainer {
-  border: 1px solid tomato;
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -602,18 +604,28 @@ header svg.chevron {
           justify-content: center;
 }
 
-.work .imageContainer * {
-  border: 1px solid tomato;
-}
-
 .work .copy {
   width: 50%;
-  padding-top: 40px;
+  padding: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .work img {
-  max-width: 100%;
+  max-width: 130%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .work .button {
@@ -622,6 +634,14 @@ header svg.chevron {
   margin-right: 10px;
 }
 
-.work .memoryGame {
+.work .memoryGame, .work .sanctuaryHelpers {
   background-color: whitesmoke;
+}
+
+.work .copy.left {
+  padding-left: 0;
+}
+
+.work .copy.right {
+  padding-right: 0;
 }

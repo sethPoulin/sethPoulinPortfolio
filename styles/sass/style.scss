@@ -201,7 +201,7 @@ header {
 
     p {
         margin-bottom: 30px;
-        max-width: 550px;
+        max-width: 530px;
         margin: 0 auto;
     }
 
@@ -298,7 +298,7 @@ header {
     .wrapper {
         width: 80%;
         margin: 0 auto;
-        min-height: 400px;
+        min-height: 500px;
     }
 
     // *{border: 1px solid tomato}
@@ -314,9 +314,9 @@ header {
     }
 
     .imageContainer {
-        border: 1px solid tomato;
+        // border: 1px solid tomato;
         width: 50%;
-        *{border: 1px solid tomato;}
+        // *{border: 1px solid tomato;}
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -325,8 +325,13 @@ header {
     .copy {
         width: 50%;
         // padding: 30px;
-        padding-top: 40px;
+        padding: 40px;
+        padding-top: 80px;
+        padding-bottom: 80px;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         // &::after {
         //     content: '';
@@ -339,8 +344,13 @@ header {
         // }
     }
 
+    // .skillsAndButtons {
+    //     padding-bottom: 30px;
+    // }
+
     img {
-        max-width: 100%;
+        max-width: 130%;
+        object-fit: cover;
     }
 
     .button {
@@ -349,8 +359,20 @@ header {
         margin-right: 10px;
     }
 
-    .memoryGame {
+    .memoryGame, .sanctuaryHelpers {
         background-color: whitesmoke;
     }
+
+    .copy.left {
+        padding-left: 0;
+    }
+
+    .copy.right {
+        padding-right: 0;
+    }
+
+    // .sanctuaryHelpers h4 {
+    //     max-width: 400px;
+    // }
 
 }
