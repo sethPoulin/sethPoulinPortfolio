@@ -27,12 +27,16 @@
     text-transform: unset;
     letter-spacing: .3rem;
     font-family: $raleway;
+
+    
 }
 
 %h4 {
     @extend %h3;
-    font-size: 3rem;
+    font-size: 3.4rem;
     color: black;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 %h5 {
@@ -88,5 +92,11 @@
     &:hover::after { 
         opacity: 1;
     }
+}
+
+%wrapper {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1280px;
 }
 
