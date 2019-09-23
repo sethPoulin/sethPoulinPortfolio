@@ -221,26 +221,41 @@ textarea {
   overflow: hidden;
 }
 
-p, h2, h3, a, h1 {
+p, h2, h5, h4, h3, a, h1 {
   font-family: "Roboto", sans-serif;
   font-size: 5.8rem;
   font-weight: 700;
-  text-transform: uppercase;
   color: white;
   letter-spacing: .8rem;
+  text-transform: uppercase;
 }
 
 p, h2 {
   font-size: 2.7rem;
   font-weight: 100;
   letter-spacing: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
 }
 
-h3 {
+h5, h4, h3 {
   font-size: 3.5rem;
   text-transform: unset;
   letter-spacing: .3rem;
   font-family: "Raleway", sans-serif;
+}
+
+h5, h4 {
+  font-size: 3rem;
+  color: black;
+}
+
+h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 3rem;
 }
 
 a {
@@ -249,13 +264,17 @@ a {
   text-decoration: none;
   font-weight: 400;
   letter-spacing: 0.2rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-transform: uppercase;
 }
 
 p {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 1.7rem;
   letter-spacing: 0.2rem;
   text-transform: unset;
+  line-height: 3rem;
 }
 
 header a:not(.chevron)::after, header a.logo::after {
@@ -270,6 +289,8 @@ header a:not(.chevron)::after, header a.logo::after {
   opacity: 0;
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 header a:not(.chevron):hover::after, header a.logo:hover::after {
@@ -299,6 +320,14 @@ body {
   left: 0;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .wrapper {
   width: 80%;
   margin: 0 auto;
@@ -314,20 +343,19 @@ h3 {
 
 a.button {
   border-style: none;
-  color: black;
+  color: white;
   outline: none;
   display: inline-block;
   padding: 13px 28px;
-  background-color: #a1b541;
+  background-color: #686868;
   max-width: 240px;
   margin: 0 auto;
   margin-top: 20px;
-  border: 2px solid #a1b541;
 }
 
 a.button:hover {
-  background-color: white;
-  color: #686868;
+  background-color: #a1b541;
+  color: white;
 }
 
 li {
@@ -451,27 +479,34 @@ header a.logo::after {
 
 header p {
   margin-bottom: 30px;
-  max-width: 550px;
+  max-width: 530px;
   margin: 0 auto;
-  line-height: 3rem;
 }
 
 header a.chevron {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   bottom: 20px;
+  width: 100px;
+}
+
+header a.chevron:hover svg.chevron {
+  fill: #a1b541;
 }
 
 header svg.chevron {
   width: 50px;
   fill: rgba(255, 255, 255, 0.3);
   stroke-width: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .about {
-  background-color: #c7c7c7;
-  padding: 70px 0;
+  background-color: whitesmoke;
+  padding: 100px 0;
 }
 
 .about .wrapper {
@@ -482,7 +517,6 @@ header svg.chevron {
 
 .about p {
   color: black;
-  font-weight: 300;
   line-height: 2.8rem;
 }
 
@@ -535,4 +569,79 @@ header svg.chevron {
 .about .button {
   margin: unset;
   margin-top: 30px;
+}
+
+.work {
+  background-color: #c7c7c7;
+}
+
+.work .wrapper {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+.work h4 {
+  padding-bottom: 15px;
+}
+
+.work p {
+  color: black;
+  letter-spacing: 0.1rem;
+}
+
+.work .imageContainer {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.work .copy {
+  width: 50%;
+  padding: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.work img {
+  max-width: 130%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.work .button {
+  background-color: #686868;
+  color: white;
+  margin-right: 10px;
+}
+
+.work .memoryGame, .work .sanctuaryHelpers {
+  background-color: whitesmoke;
+}
+
+.work .copy.left {
+  padding-left: 0;
+}
+
+.work .copy.right {
+  padding-right: 0;
 }

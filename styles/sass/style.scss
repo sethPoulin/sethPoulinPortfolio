@@ -15,6 +15,11 @@ body {
 
 .skip-link { position: absolute; left: -1000px; top: 5px; z-index: 999; background: white; color: black;}.skip-link:focus {left: 0;}
 
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .wrapper {
     width: 80%;
     margin: 0 auto;
@@ -34,6 +39,14 @@ h3 {
     color: black;
 }
 
+h4 {
+    @extend %h4;
+}
+
+h5 {
+    @extend %h5;
+}
+
 a {
     @extend %a;
     
@@ -41,18 +54,24 @@ a {
 
 a.button {
     border-style: none;
-    color: black;
+    color: white;
+    // color: black;
     outline: none;
     display: inline-block;
     padding: 13px 28px;
-    background-color: $green;
+    background-color: $darkGrey;
+    // background-color: $green;
     max-width: 240px;
     margin: 0 auto;
     margin-top: 20px;
-    border: 2px solid $green;
+    // border: 2px solid white;
+    // border: 2px solid $green;
     &:hover {
-        background-color: white;
-        color: $darkGrey;
+        background-color: $green;
+        // background-color: white;
+        color: white;
+        // color: $darkGrey;
+        // border: 2px solid $green;
     }
     // text-align: center;
 
@@ -151,6 +170,8 @@ header {
         }
     }
 
+   
+
 
 
     svg.logo {
@@ -168,33 +189,40 @@ header {
         position: relative;
         left: 0;
         right: 0;
+
         
         &::after {
             // opacity: 1;
             transform: translateX(-15%);
             width: 140%;
+            // transition: 0.2s;
         }
     }
 
     p {
         margin-bottom: 30px;
-        max-width: 550px;
+        max-width: 530px;
         margin: 0 auto;
-        line-height: 3rem;
     }
 
     a.chevron {
         position: absolute;
-        left: 0;
-        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
         bottom: 20px;
+        width: 100px;
+
+        &:hover svg.chevron {
+            fill: $green;
+        }
     }
 
     svg.chevron {
         width: 50px;
         fill: rgba(255,255,255,0.3);
         // stroke: white;
-        stroke-width: 10px; 
+        stroke-width: 10px;
+        transition: 0.2s; 
     }
 
     // svg::after {
@@ -204,8 +232,8 @@ header {
 
 .about {
 
-    background-color: $midGrey;
-    padding: 70px 0;
+    background-color: whitesmoke;
+    padding: 100px 0;
 
     .wrapper {
         display: flex;
@@ -213,7 +241,6 @@ header {
 
     p {
         color: black;
-        font-weight: 300;
         line-height:2.8rem;
     }
 
@@ -240,6 +267,8 @@ header {
         overflow: hidden;
         // box-shadow: 8px 8px 6px -6px #777;
         box-shadow: -12px -12px $green;
+        // box-shadow: -12px -12px $darkGrey;
+        // box-shadow: -12px -12px white;
 
         img {
             max-width: 100%;
@@ -260,8 +289,90 @@ header {
         margin: unset;
         margin-top: 30px;
     }
+}
 
-    
+.work {
 
-    
+    background-color: $midGrey;
+
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+        min-height: 500px;
+    }
+
+    // *{border: 1px solid tomato}
+
+    h4 {
+        padding-bottom: 15px;
+    }
+
+    p {
+        color: black;
+        letter-spacing: 0.1rem;
+
+    }
+
+    .imageContainer {
+        // border: 1px solid tomato;
+        width: 50%;
+        // *{border: 1px solid tomato;}
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .copy {
+        width: 50%;
+        // padding: 30px;
+        padding: 40px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     right: 19px;
+        //     left: 10px;
+        //     bottom: 150px;
+        //     top: 24px;
+        //     background-color: rgba(255, 255, 255, 0.1);
+        // }
+    }
+
+    // .skillsAndButtons {
+    //     padding-bottom: 30px;
+    // }
+
+    img {
+        max-width: 130%;
+        object-fit: cover;
+    }
+
+    .button {
+        background-color: $darkGrey;
+        color: white;
+        margin-right: 10px;
+    }
+
+    .memoryGame, .sanctuaryHelpers {
+        background-color: whitesmoke;
+    }
+
+    .copy.left {
+        padding-left: 0;
+    }
+
+    .copy.right {
+        padding-right: 0;
+    }
+
+    // .sanctuaryHelpers h4 {
+    //     max-width: 400px;
+    // }
+
 }
