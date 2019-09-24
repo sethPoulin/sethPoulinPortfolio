@@ -93,7 +93,7 @@ header {
     justify-content: center;
     text-align: center;
     height: 100vh;
-    min-height: 665px;
+    min-height: 680px;
     // max-height: 665px;
     width: 100%;
 
@@ -298,8 +298,8 @@ header {
 
     h3 {
         padding-bottom: 30px;
+        line-height: 26px;
         color: white;
-        position: relative;
 
         &::after {
             content: '';
@@ -307,7 +307,7 @@ header {
             width: 100px;
             background-color: $green;
             position: absolute;
-            bottom: 35px;
+            top: 22px;
             margin-left: 5px;
 
         }
@@ -315,6 +315,7 @@ header {
 
     .aboutCopy {
         width: 60%;
+        position: relative;
     }
 
     .aboutPhoto {
@@ -509,6 +510,8 @@ header {
 }
 
 .contact {
+
+    // * {border: 1px solid tomato}
     margin: 0 auto;
     padding: 70px 0;
     // background-color: $darkGrey;
@@ -560,7 +563,10 @@ header {
     // }
 
     label {
-        width: auto;
+        // width: auto;
+        position: absolute;
+        padding-bottom: 5px;
+        bottom: 0;
         padding-right: 20px;
         text-transform: uppercase;
     }
@@ -569,29 +575,33 @@ header {
         width: 50%;
         display: flex;
         justify-content: space-between;
-        padding-right: 30px;
+        // padding-right: 30px;
+        position: relative;
 
         @media(max-width:1073px){
             width: 100%;
+            padding-right: 0;
         }
     }
     
     .name {
-        label {
-            padding-right: 63px;
 
-            @media(max-width:1073px){
-                padding-right: 0;
-            }
+        padding-right: 20px;
+
+        @media(max-width:1073px){
+            padding-right: 0;
         }
+        
+        // label {
+        //     padding-right: 63px;
+        // }
+            
+    
     }
 
     .email {
-        padding-left: 20px;
+        // padding-left: 20px;
 
-        &:hover {
-            color: $green;
-        }
 
         @media(max-width:1073px){
             padding-right: 0;
@@ -599,10 +609,11 @@ header {
 
             input {
                 padding-left: 0;
+                // width: 85%
             }
 
             label {
-                padding-right: 0;
+                padding-right: 10px;
             }
         }
 
@@ -611,30 +622,42 @@ header {
 
     .comment {
         padding-top: 30px;
-        padding-right: 30px;
+        // padding-right: 30px;
         display: flex;
+        position: relative;
+
+        label {
+            top: 43px;
+            bottom: unset;
+            padding-left: 10px;
+        }
 
         textarea {
             @extend %p;
             flex-grow: 1;
-            padding-left: 20px;
+            padding-left: 120px;
             padding-top: 10px;
             // background-color: $darkGrey;
             background-color: transparent;
             border-bottom: none;
             border: 2px solid white;
             height: 200px;
-            resize: none;
-            
+            resize: none;  
         }
+    
+
+        // @media(max-width:1073px){
+        //     padding-right: 0;
+        // }
     }
 
     input {
         @extend %p;
+        padding-left: 70px;
         background-color: transparent;
         border: none;
         border-bottom: 2px solid white;
-        padding-left: 20px;
+        // padding-left: 20px;
         // width: auto;
         flex-grow: 1;
     }
@@ -681,6 +704,12 @@ header {
     i {
         font-size: 3rem;
         transition: 0.2s;
+    }
+
+    .emailContact {
+        &:hover {
+            color: $green;
+        }
     }
 
     
