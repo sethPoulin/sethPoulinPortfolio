@@ -10,6 +10,7 @@
     color: white;
     letter-spacing: .8rem;
     text-transform: uppercase;
+    line-height: 6.5rem;
 }
 
 %h2 {
@@ -19,6 +20,7 @@
     letter-spacing: 1.5rem;
     font-family: $roboto;
     text-transform: uppercase;
+    line-height: 3.8rem;
 }
 
 %h3 {
@@ -62,6 +64,7 @@
     letter-spacing: 0.2rem;
     transition: 0.2s;
     text-transform: uppercase;
+    line-height: unset;
 }
 
 %p {

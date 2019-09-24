@@ -228,6 +228,7 @@ p, label, button, .contact .comment textarea, .contact input, h2, h5, h4, h3, a,
   color: white;
   letter-spacing: .8rem;
   text-transform: uppercase;
+  line-height: 6.5rem;
 }
 
 p, label, button, .contact .comment textarea, .contact input, h2 {
@@ -236,6 +237,7 @@ p, label, button, .contact .comment textarea, .contact input, h2 {
   letter-spacing: 1.5rem;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
+  line-height: 3.8rem;
 }
 
 h5, h4, h3 {
@@ -269,6 +271,7 @@ a, .contact button {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   text-transform: uppercase;
+  line-height: unset;
 }
 
 p, label, button, .contact .comment textarea, .contact input {
@@ -350,7 +353,7 @@ a.button, button {
   outline: none;
   display: inline-block;
   padding: 13px 28px;
-  background-color: #686868;
+  background-color: transparent;
   max-width: 240px;
   margin: 0 auto;
   margin-top: 20px;
@@ -360,6 +363,7 @@ a.button, button {
 a.button:hover, button:hover {
   background-color: #a1b541;
   color: white;
+  border: 2px solid #a1b541;
 }
 
 li {
@@ -378,22 +382,18 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  height: 90vh;
+  height: 100vh;
+  min-height: 665px;
   width: 100%;
-  position: relative;
   background: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-}
-
-header .wrapper {
-  position: relative;
 }
 
 header .navBar {
   position: absolute;
   left: 0;
   right: 0;
-  top: -300px;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,6 +418,12 @@ header .navBarLeft {
   text-align: left;
 }
 
+@media (max-width: 776px) {
+  header .navBarLeft {
+    display: none;
+  }
+}
+
 header ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,6 +431,30 @@ header ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  header ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 200px;
+    height: 320px;
+    position: absolute;
+    background: rgba(133, 133, 133, 0.3);
+    padding: 0 5px;
+    top: 0;
+    right: -80px;
+    -webkit-box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
 }
 
 header li {
@@ -439,6 +469,17 @@ header li {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+}
+
+@media (max-width: 775px) {
+  header li::after {
+    content: '';
+    height: 4px;
+    width: 40px;
+    color: #a1b541;
+    position: absolute;
+    top: 0;
+  }
 }
 
 header a:not(.chevron) {
@@ -497,7 +538,7 @@ header a.chevron {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: -280px;
+  bottom: 20px;
   width: 100px;
 }
 
@@ -533,6 +574,7 @@ header svg.chevron {
 .about h3 {
   padding-bottom: 30px;
   color: white;
+  position: relative;
 }
 
 .about h3::after {
@@ -541,7 +583,7 @@ header svg.chevron {
   width: 100px;
   background-color: #a1b541;
   position: absolute;
-  bottom: -38px;
+  bottom: 35px;
   margin-left: 5px;
 }
 
@@ -622,7 +664,7 @@ header svg.chevron {
   position: relative;
 }
 
-.work .wrapper::after {
+.work .wrapper:not(.last)::after {
   content: '';
   height: 5px;
   width: 60%;
@@ -643,6 +685,7 @@ header svg.chevron {
 
 .work h5 {
   color: #a1b541;
+  padding-top: 10px;
 }
 
 .work p {
@@ -666,6 +709,7 @@ header svg.chevron {
 
 .work .copy {
   width: 50%;
+  min-height: 440px;
   padding: 40px;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -689,9 +733,12 @@ header svg.chevron {
 }
 
 .work .button {
-  background-color: transparent;
   color: white;
   margin-right: 10px;
+}
+
+.work .button:hover {
+  border: 2px solid #a1b541;
 }
 
 .work .copy.left {
@@ -711,23 +758,44 @@ header svg.chevron {
 .contact {
   margin: 0 auto;
   padding: 70px 0;
-  background-color: #686868;
+  background-color: #0C232B;
 }
 
 .contact .wrapper {
   width: 80%;
+  max-width: 80%;
 }
 
 .contact h3 {
   padding-bottom: 70px;
   text-align: center;
   color: white;
+  position: relative;
+}
+
+.contact h3::after {
+  content: '';
+  height: 5px;
+  width: 100px;
+  background-color: #a1b541;
+  position: absolute;
+  bottom: 73px;
+  margin-left: 5px;
 }
 
 .contact .formTop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 1073px) {
+  .contact .formTop {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .contact label {
@@ -747,8 +815,41 @@ header svg.chevron {
   padding-right: 30px;
 }
 
+@media (max-width: 1073px) {
+  .contact .name, .contact .email {
+    width: 100%;
+  }
+}
+
 .contact .name label {
   padding-right: 63px;
+}
+
+@media (max-width: 1073px) {
+  .contact .name label {
+    padding-right: 0;
+  }
+}
+
+.contact .email {
+  padding-left: 20px;
+}
+
+.contact .email:hover {
+  color: #a1b541;
+}
+
+@media (max-width: 1073px) {
+  .contact .email {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .contact .email input {
+    padding-left: 0;
+  }
+  .contact .email label {
+    padding-right: 0;
+  }
 }
 
 .contact .comment {
@@ -765,7 +866,7 @@ header svg.chevron {
           flex-grow: 1;
   padding-left: 20px;
   padding-top: 10px;
-  background-color: #686868;
+  background-color: transparent;
   border-bottom: none;
   border: 2px solid white;
   height: 200px;
@@ -793,7 +894,6 @@ header svg.chevron {
 
 .contact button:hover {
   border: 2px solid #a1b541;
-  color: #686868;
 }
 
 .contact .buttonContainer {
@@ -806,9 +906,35 @@ header svg.chevron {
   width: 100%;
 }
 
+.contact .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact li {
+  padding-right: 20px;
+}
+
+.contact li:hover i {
+  color: #a1b541;
+}
+
+.contact i {
+  font-size: 3rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
 footer {
   background-color: black;
-  padding: 30px;
+  padding: 20px;
   margin: 0 auto;
   color: white;
   text-align: center;
