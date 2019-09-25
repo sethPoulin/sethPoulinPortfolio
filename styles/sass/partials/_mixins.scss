@@ -76,26 +76,26 @@
     line-height: 3rem;
 }
 
-%underline {
+// %underline {
 
-    &::after{
-        content: '';
-        height: 2px;
-        width: 80%;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-color: $green;
-        opacity: 0;
-        transform: translateX(20px);
-        transition: 0.2s;
-    }
+//     &::after{
+//         content: '';
+//         height: 2px;
+//         width: 80%;
+//         position: absolute;
+//         bottom: 0;
+//         right: 0;
+//         left: 0;
+//         background-color: $green;
+//         opacity: 0;
+//         transform: translateX(20px);
+//         transition: 0.2s;
+//     }
 
-    &:hover::after { 
-        opacity: 1;
-    }
-}
+//     &:hover::after { 
+//         opacity: 1;
+//     }
+// }
 
 %wrapper {
     width: 80%;

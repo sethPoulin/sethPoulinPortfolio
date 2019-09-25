@@ -282,26 +282,6 @@ p, label, button, .contact .comment textarea, .contact input {
   line-height: 3rem;
 }
 
-header a:not(.chevron)::after, header a.logo::after {
-  content: '';
-  height: 2px;
-  width: 80%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #a1b541;
-  opacity: 0;
-  -webkit-transform: translateX(20px);
-          transform: translateX(20px);
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-header a:not(.chevron):hover::after, header a.logo:hover::after {
-  opacity: 1;
-}
-
 .wrapper {
   width: 80%;
   margin: 0 auto;
@@ -433,7 +413,7 @@ header ul {
           justify-content: space-between;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 710px) {
   header ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -442,13 +422,13 @@ header ul {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 200px;
+    width: 150px;
     height: 320px;
     position: absolute;
     background: rgba(133, 133, 133, 0.3);
     padding: 0 5px;
     top: 0;
-    right: -80px;
+    right: -70px;
     -webkit-box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
             box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -471,19 +451,34 @@ header li {
   position: relative;
 }
 
-@media (max-width: 775px) {
-  header li::after {
-    content: '';
-    height: 4px;
-    width: 40px;
-    color: #a1b541;
-    position: absolute;
-    top: 0;
+@media (max-width: 710px) {
+  header li {
+    padding-bottom: 15px;
   }
 }
 
 header a:not(.chevron) {
   padding: 10px 10px 10px 30px;
+}
+
+header a:not(.chevron)::after {
+  content: '';
+  height: 2px;
+  width: 80%;
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  left: 0;
+  background-color: #a1b541;
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+header a:not(.chevron):hover::after {
+  opacity: 1;
 }
 
 header h1 {
@@ -519,12 +514,6 @@ header a.logo {
   position: relative;
   left: 0;
   right: 0;
-}
-
-header a.logo::after {
-  -webkit-transform: translateX(-15%);
-          transform: translateX(-15%);
-  width: 140%;
 }
 
 header p {
@@ -676,7 +665,7 @@ header svg.chevron {
 }
 
 .work .whatsForDinner .wrapper {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 .work h4 {
@@ -758,13 +747,14 @@ header svg.chevron {
 
 .contact {
   margin: 0 auto;
-  padding: 70px 0;
+  padding: 100px 0;
   background-color: #0C232B;
 }
 
 .contact .wrapper {
   width: 80%;
   max-width: 80%;
+  position: relative;
 }
 
 .contact h3 {
@@ -886,12 +876,12 @@ header svg.chevron {
 }
 
 .contact button {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 50%;
+  max-width: unset;
   margin: unset;
   margin-top: 20px;
-  margin-right: 30px;
 }
 
 .contact button:hover {
@@ -908,30 +898,9 @@ header svg.chevron {
   width: 100%;
 }
 
-.contact .social {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.contact ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.contact li {
-  padding-right: 20px;
-}
-
-.contact li:hover i {
-  color: #a1b541;
-}
-
-.contact i {
-  font-size: 3rem;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+.contact .emailContact {
+  position: absolute;
+  bottom: 10px;
 }
 
 .contact .emailContact:hover {
@@ -940,8 +909,52 @@ header svg.chevron {
 
 footer {
   background-color: black;
-  padding: 20px;
+  padding: 5px;
   margin: 0 auto;
   color: white;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer nav {
+  padding: 13px 0 13px 0;
+}
+
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer li {
+  padding: 15px 20px 10px 20px;
+}
+
+footer li:hover i {
+  color: #a1b541;
+}
+
+footer i {
+  font-size: 2.5rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+footer p {
+  font-size: 1.4rem;
 }
