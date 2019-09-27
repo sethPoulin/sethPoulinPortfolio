@@ -311,12 +311,19 @@ body {
   left: 0;
 }
 
-.flex {
+.flex, .flexReverse {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.flexReverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 h1 {
@@ -365,6 +372,7 @@ header {
   height: 100vh;
   min-height: 680px;
   width: 100%;
+  position: relative;
   background: -webkit-gradient(linear, left top, right top, from(#0f2027), color-stop(#203a43), to(#2c5364));
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }
@@ -425,15 +433,28 @@ header ul {
     width: 150px;
     height: 320px;
     position: absolute;
-    background: rgba(133, 133, 133, 0.3);
+    background: rgba(75, 164, 216, 0.4);
     padding: 0 5px;
     top: 0;
-    right: -70px;
+    right: -12%;
     -webkit-box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
             box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+  }
+}
+
+@media (max-width: 568px) {
+  header ul {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  header ul {
+    width: 120px;
+    height: 250px;
   }
 }
 
@@ -457,8 +478,20 @@ header li {
   }
 }
 
+@media (max-width: 480px) {
+  header li {
+    padding-bottom: 0;
+  }
+}
+
 header a:not(.chevron) {
   padding: 10px 10px 10px 30px;
+}
+
+@media (max-width: 480px) {
+  header a:not(.chevron) {
+    padding-left: 10px;
+  }
 }
 
 header a:not(.chevron)::after {
@@ -487,9 +520,39 @@ header h1 {
   padding-bottom: 30px;
 }
 
+@media (max-width: 681px) {
+  header h1 {
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 440px) {
+  header h1 {
+    font-size: 4.5rem;
+    line-height: 5rem;
+  }
+}
+
 header h2 {
+  margin: 0 auto;
   margin-bottom: 45px;
   position: relative;
+  text-align: center;
+}
+
+@media (max-width: 739px) {
+  header h2 {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 440px) {
+  header h2 {
+    font-size: 2.2rem;
+    letter-spacing: .5rem;
+  }
 }
 
 header h2::after {
@@ -509,8 +572,6 @@ header svg.logo {
   fill: none;
   stroke: white;
   stroke-width: 10px;
-  -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
 }
 
 header a.logo {
@@ -522,7 +583,7 @@ header a.logo {
 
 header p {
   margin-bottom: 30px;
-  max-width: 500px;
+  max-width: 510px;
   margin: 0 auto;
 }
 
@@ -570,6 +631,14 @@ header svg.chevron {
   color: white;
 }
 
+@media (max-width: 792px) {
+  .about h3 {
+    text-align: center;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+}
+
 .about h3::after {
   content: '';
   height: 5px;
@@ -585,6 +654,12 @@ header svg.chevron {
   position: relative;
 }
 
+@media (max-width: 792px) {
+  .about .aboutCopy {
+    width: 100%;
+  }
+}
+
 .about .aboutPhoto {
   width: 40%;
   display: -webkit-box;
@@ -595,21 +670,42 @@ header svg.chevron {
           justify-content: center;
 }
 
+@media (max-width: 792px) {
+  .about .aboutPhoto {
+    display: none;
+  }
+}
+
 .about .photoContainer {
   height: 300px;
   width: 240px;
   margin-top: 12px;
   overflow: hidden;
+  margin-right: 40px;
   -webkit-box-shadow: -12px -12px #a1b541;
           box-shadow: -12px -12px #a1b541;
+}
+
+@media (max-width: 857px) {
+  .about .photoContainer {
+    width: unset;
+  }
 }
 
 .about .photoContainer img {
   max-width: 100%;
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: 10px -20px;
      object-position: 10px -20px;
+}
+
+@media (max-width: 792px) {
+  .about .photoContainer img {
+    display: none;
+  }
 }
 
 .about .copyAndButton {
@@ -642,6 +738,15 @@ header svg.chevron {
   text-align: center;
   color: white;
   position: relative;
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+@media (max-width: 885px) {
+  .work h3 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .work h3::after {
@@ -654,12 +759,24 @@ header svg.chevron {
   margin-left: 5px;
 }
 
+@media (max-width: 885px) {
+  .work h3::after {
+    bottom: 60px;
+  }
+}
+
 .work .wrapper {
   width: 80%;
   margin: 0 auto;
   min-height: 500px;
   padding: 100px 0;
   position: relative;
+}
+
+@media (max-width: 885px) {
+  .work .wrapper {
+    display: block;
+  }
 }
 
 .work .wrapper:not(.last)::after {
@@ -672,6 +789,12 @@ header svg.chevron {
   right: 20%;
 }
 
+@media (max-width: 885px) {
+  .work .wrapper {
+    padding: 60px 0;
+  }
+}
+
 .work .whatsForDinner .wrapper {
   padding-top: 0px;
 }
@@ -681,14 +804,45 @@ header svg.chevron {
   color: white;
 }
 
+@media (max-width: 1145px) {
+  .work h4 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .work h4 {
+    font-size: 2.4rem;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 885px) {
+  .work h4 {
+    text-align: center;
+  }
+}
+
 .work h5 {
   color: #a1b541;
   padding-top: 10px;
 }
 
+@media (max-width: 885px) {
+  .work h5 {
+    text-align: center;
+  }
+}
+
 .work p {
   color: white;
   letter-spacing: 0.1rem;
+}
+
+@media (max-width: 885px) {
+  .work p {
+    text-align: center;
+  }
 }
 
 .work .imageContainer {
@@ -703,6 +857,12 @@ header svg.chevron {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 885px) {
+  .work .imageContainer {
+    width: 100%;
+  }
 }
 
 .work .copy {
@@ -722,6 +882,14 @@ header svg.chevron {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (max-width: 885px) {
+  .work .copy {
+    width: 100%;
+    padding: 0;
+    min-height: unset;
+  }
 }
 
 .work img {
@@ -747,6 +915,12 @@ header svg.chevron {
   padding-right: 0;
 }
 
+@media (max-width: 885px) {
+  .skillsAndButtons {
+    margin: 0 auto;
+  }
+}
+
 .skills {
   background-color: #c7c7c7;
   text-align: center;
@@ -770,6 +944,8 @@ header svg.chevron {
   text-align: center;
   color: white;
   position: relative;
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
 }
 
 .contact h3::after {
@@ -784,7 +960,7 @@ header svg.chevron {
 
 .contact p {
   text-align: center;
-  max-width: 500px;
+  max-width: 510px;
   margin: 0 auto;
   padding-bottom: 60px;
 }
@@ -812,6 +988,12 @@ header svg.chevron {
   text-transform: uppercase;
 }
 
+@media (max-width: 1073px) {
+  .contact label[for=name] {
+    bottom: 15px;
+  }
+}
+
 .contact .name, .contact .email {
   width: 50%;
   display: -webkit-box;
@@ -837,6 +1019,7 @@ header svg.chevron {
 @media (max-width: 1073px) {
   .contact .name {
     padding-right: 0;
+    padding-bottom: 15px;
   }
 }
 
@@ -899,6 +1082,13 @@ header svg.chevron {
   margin-top: 20px;
 }
 
+@media (max-width: 740px) {
+  .contact button {
+    position: static;
+    width: 100%;
+  }
+}
+
 .contact button:hover {
   border: 2px solid #a1b541;
 }
@@ -913,9 +1103,23 @@ header svg.chevron {
   width: 100%;
 }
 
+@media (max-width: 740px) {
+  .contact .buttonContainer {
+    padding-bottom: 20px;
+  }
+}
+
 .contact .emailContact {
   position: absolute;
   bottom: 10px;
+}
+
+@media (max-width: 740px) {
+  .contact .emailContact {
+    position: static;
+    display: block;
+    text-align: center;
+  }
 }
 
 .contact .emailContact:hover {
