@@ -221,7 +221,7 @@ textarea {
   overflow: hidden;
 }
 
-p, label, button, .contact .comment textarea, .contact input, h2, h5, h4, h3, a, .contact button, h1 {
+p, label, button, .work .headerAndDescription a, .contact .comment textarea, .contact input, h2, h5, h4, h3, a, .contact button, h1 {
   font-family: "Roboto", sans-serif;
   font-size: 5.8rem;
   font-weight: 700;
@@ -231,7 +231,7 @@ p, label, button, .contact .comment textarea, .contact input, h2, h5, h4, h3, a,
   line-height: 6.5rem;
 }
 
-p, label, button, .contact .comment textarea, .contact input, h2 {
+p, label, button, .work .headerAndDescription a, .contact .comment textarea, .contact input, h2 {
   font-size: 2.7rem;
   font-weight: 100;
   letter-spacing: 1.5rem;
@@ -274,7 +274,7 @@ a, .contact button {
   line-height: unset;
 }
 
-p, label, button, .contact .comment textarea, .contact input {
+p, label, button, .work .headerAndDescription a, .contact .comment textarea, .contact input {
   font-weight: 300;
   font-size: 1.7rem;
   letter-spacing: 0.2rem;
@@ -783,7 +783,7 @@ header svg.chevron {
   width: 80%;
   margin: 0 auto;
   min-height: 500px;
-  padding: 100px 0;
+  padding: 60px 0 100px 0;
   position: relative;
 }
 
@@ -809,7 +809,7 @@ header svg.chevron {
   }
 }
 
-.work .whatsForDinner .wrapper {
+.work .canIRecycle .wrapper {
   padding-top: 0px;
 }
 
@@ -857,6 +857,11 @@ header svg.chevron {
   .work p {
     text-align: center;
   }
+}
+
+.work .headerAndDescription a {
+  text-decoration: underline;
+  text-transform: unset;
 }
 
 .work .imageContainer {

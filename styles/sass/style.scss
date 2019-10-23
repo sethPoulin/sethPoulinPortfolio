@@ -581,7 +581,7 @@ header {
         width: 80%;
         margin: 0 auto;
         min-height: 500px;
-        padding: 100px 0;
+        padding: 60px 0 100px 0;
         position: relative;
 
         @media(max-width: 885px){
@@ -607,7 +607,7 @@ header {
 
     }
 
-    .whatsForDinner .wrapper {
+    .canIRecycle .wrapper {
         padding-top: 0px;
     }
 
@@ -650,6 +650,12 @@ header {
             text-align: center;
         }
 
+    }
+
+    .headerAndDescription a {
+        @extend %p;
+        text-decoration: underline;
+        text-transform: unset;
     }
 
     .imageContainer {

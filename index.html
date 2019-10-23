@@ -65,7 +65,7 @@
             <div class="wrapper">
                 <div class="aboutPhoto">
                     <div class="photoContainer">
-                        <img src="/assets/2019-Summer-Seth-Poulin-Juno-1.jpg" alt="An image of Seth Poulin">
+                        <img src="/assets/2019-Summer-Seth-Poulin-Juno-1.jpg" alt="Seth Poulin">
                         <!-- <img src="/assets/2019-Summer-Seth-Poulin-Juno-1-BW-opt.jpeg" alt="A black and white image of Seth Poulin"> -->
                     </div>
                 </div>
@@ -82,20 +82,20 @@
         
         <section id="work" class="work">
             <h3>Work</h3>
-            <div class="whatsForDinner">
+            <div class="CanIRecycle">
                 <div class="wrapper flex">
                     <div class="imageContainer left">
-                        <img src="/assets/wfdDesktopMockup.png" alt="A computer displaying the 'What's For Dinner?' website home page.">
+                        <img src="/assets/recycleMockup.png" alt="A computer displaying the 'Can I Recycle?' home page.">  
                     </div>
                     <div class="copy right">
                         <div class="headerAndDescription">
-                            <h4>What's For Dinner?</h4>
-                            <p>A dinner-event planning app that allows users to create events, add guests, add recipes from an API, and then assign ingredients for each guest to bring.  Built using React and Firebase and mob programmed with Armenia Cole, Aaron Lee, and Prashath Cheliyan.</p>
-                            <h5>React, Firebase, APIs, JavaScript, HTML5, CSS3, Sass.</h5>
+                            <h4>Can I Recycle?</h4>
+                            <p>A recycling helper app that allows users to enter an item and find out whether it's recyclable in the City of Toronto, and how to recycle it if it is.  Built using React, Firebase and JavaScript.</p>
+                            <h5>React, Firebase, JavaScript, HTML5, CSS3, Sass.</h5>
                         </div>
                         <div class="skillsAndButtons">
-                            <a target="blank" href="https://whats-for-dinner.github.io/project-6/" class="button">Live Site</a>
-                            <a target="blank" href="https://github.com/whats-for-dinner/project-6" class="button">Github</a>
+                            <a target="blank" href="https://project5-recycling.web.app" class="button">Live Site</a>
+                            <a target="blank" href="https://github.com/sethPoulin/sethPoulinProject5" class="button">Github</a>
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="copy left">
                         <div class="headerAndDescription">
-                            <h4>Memory Game</h4>
+                            <h4>Dodgy Doggos</h4>
                             <p>A retro-themed memory card game featuring adorable puppies.  Built using jQuery and JavaScript.</p>
                             <h5>jQuery, JavaScript, HTML5, CSS3, Sass.</h5>
                         </div>
@@ -118,20 +118,22 @@
                     </div>
                 </div>
             </div>
-            <div class="canIRecycle">
+            <div class="whatsForDinner">
                 <div class="wrapper flex">
                     <div class="imageContainer left">
-                        <img src="/assets/recycleMockup.png" alt="A computer displaying the 'Can I Recycle?' home page.">
+                        <img src="/assets/wfdDesktopMockup.png" alt="A computer displaying the 'What's For Dinner?' website home page.">
                     </div>
                     <div class="copy right">
                         <div class="headerAndDescription">
-                            <h4>Can I Recycle?</h4>
-                            <p>A recycling helper app that allows users to enter an item and find out whether it's recyclable in the City of Toronto, and how to recycle it if it is.  Built using React, Firebase and JavaScript.</p>
-                            <h5>React, Firebase, JavaScript, HTML5, CSS3, Sass.</h5>
+                            <h4>What's For Dinner?</h4>
+                            <p>A dinner-event planning app that allows users to create events, add guests, add recipes from an API, and then assign ingredients for each guest to bring.  Built using React and Firebase and mob programmed with Armenia Cole, Aaron Lee, and Prashath Cheliyan.</p>
+                            <p>*List of proposed changes is <a href="https://trello.com/b/JWDnjNBU">here</a>.</p>
+                            <h5>React, Firebase, APIs, JavaScript, HTML5, CSS3, Sass.</h5>
+                            
                         </div>
                         <div class="skillsAndButtons">
-                            <a target="blank" href="https://project5-recycling.web.app" class="button">Live Site</a>
-                            <a target="blank" href="https://github.com/sethPoulin/sethPoulinProject5" class="button">Github</a>
+                            <a target="blank" href="https://whats-for-dinner.github.io/project-6/" class="button">Live Site</a>
+                            <a target="blank" href="https://github.com/whats-for-dinner/project-6" class="button">Github</a>
                         </div>
                     </div>
                 </div>
@@ -214,27 +216,27 @@
     <script>
         $(function(){
     
-            $('.exit').click(function(){
-                $(this).removeClass('block');
-                $('.gallery-item').removeClass('show');
-                $(this).fadeTo(500,0.01);
-            });
+            // $('.exit').click(function(){
+            //     $(this).removeClass('block');
+            //     $('.gallery-item').removeClass('show');
+            //     $(this).fadeTo(500,0.01);
+            // });
 
-            $('header .hamburger').click(function(){
-                $('header nav ul').addClass("visible");
-                $('.header-exit').addClass('block');
-                // $(this).addClass("display-none");
-            });
+            // $('header .hamburger').click(function(){
+            //     $('header nav ul').addClass("visible");
+            //     $('.header-exit').addClass('block');
+            //     // $(this).addClass("display-none");
+            // });
 
-            $('header nav li').click(function(){
-                $('header nav ul').removeClass('visible');
-                $('.header-exit').removeClass('block');
-            });
+            // $('header nav li').click(function(){
+            //     $('header nav ul').removeClass('visible');
+            //     $('.header-exit').removeClass('block');
+            // });
 
-            $('.header-exit').click(function(){
-                $('header nav ul').removeClass('visible');
-                $(this).removeClass('block');
-            })
+            // $('.header-exit').click(function(){
+            //     $('header nav ul').removeClass('visible');
+            //     $(this).removeClass('block');
+            // })
 
             $('a').smoothScroll();
 
