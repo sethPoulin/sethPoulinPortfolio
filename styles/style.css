@@ -252,6 +252,9 @@ h5, h4 {
   color: black;
   text-transform: uppercase;
   font-weight: 400;
+  line-height: 3.4rem;
+  margin-bottom: 20px;
+  margin-top: 15px;
 }
 
 h5 {
@@ -353,6 +356,15 @@ a.button:hover, button:hover {
   border: 2px solid #a1b541;
 }
 
+@media (max-width: 394px) {
+  a.button, button {
+    width: 100%;
+    text-align: center;
+    display: block;
+    max-width: unset;
+  }
+}
+
 li {
   padding-bottom: 0;
 }
@@ -410,19 +422,9 @@ header .navBar.show {
   }
 }
 
-@media (max-width: 364px) {
-  header .navBar {
-    width: 95%;
-    left: unset;
-    width: 100%;
-  }
-}
-
 @media (max-width: 330px) {
   header .navBar {
-    padding: 7px;
-    -webkit-transform: translateX(-4%);
-            transform: translateX(-4%);
+    left: -35px;
   }
 }
 
@@ -449,6 +451,7 @@ header .navBarRight {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  width: 100%;
 }
 
 header ul {
@@ -653,6 +656,13 @@ header svg.chevron {
   }
 }
 
+@media (max-width: 400px) {
+  .about h3 {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
 .about h3::after {
   content: '';
   height: 5px;
@@ -661,6 +671,12 @@ header svg.chevron {
   position: absolute;
   top: 22px;
   margin-left: 5px;
+}
+
+@media (max-width: 400px) {
+  .about h3::after {
+    width: 0;
+  }
 }
 
 .about .aboutCopy {
@@ -859,6 +875,12 @@ header svg.chevron {
   }
 }
 
+@media (max-width: 500px) {
+  .work p {
+    text-align: left;
+  }
+}
+
 .work .headerAndDescription a {
   text-decoration: underline;
   text-transform: unset;
@@ -940,6 +962,12 @@ header svg.chevron {
   }
 }
 
+@media (max-width: 394px) {
+  .skillsAndButtons {
+    width: 100%;
+  }
+}
+
 .skills {
   background-color: #c7c7c7;
   text-align: center;
@@ -995,8 +1023,7 @@ header svg.chevron {
 .contact p {
   text-align: center;
   max-width: 510px;
-  margin: 0 auto;
-  padding-bottom: 60px;
+  margin: 20px auto 0;
 }
 
 .contact .formTop {
@@ -1061,12 +1088,14 @@ header svg.chevron {
   }
 }
 
+.contact .email input {
+  padding-left: 70px;
+  padding-bottom: 3px;
+}
+
 @media (max-width: 1073px) {
   .contact .email {
     padding-right: 0;
-    padding-left: 0;
-  }
-  .contact .email input {
     padding-left: 0;
   }
   .contact .email label {
@@ -1112,12 +1141,13 @@ header svg.chevron {
 }
 
 .contact button {
+  margin: 0 auto;
   padding-top: 15px;
   padding-bottom: 15px;
-  width: 50%;
+  width: 25%;
+  min-width: 200px;
   max-width: unset;
-  margin: unset;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 @media (max-width: 740px) {
@@ -1148,8 +1178,11 @@ header svg.chevron {
 }
 
 .contact .emailContact {
-  position: absolute;
-  bottom: 10px;
+  margin: 30px auto;
+  text-align: center;
+  display: block;
+  padding-bottom: 40px;
+  width: 100%;
 }
 
 @media (max-width: 740px) {

@@ -164,6 +164,7 @@
             <div class="wrapper">
                 <h3>Get in touch</h3>
                 <p>I'd love to discuss ideas or help answer any questions you have.  Send me a message and I'll be in touch!</p>
+                <a class="emailContact" href="mailto:">seth.poulin@gmail.com</a> 
                 <form action="https://formspree.io/seth.poulin@gmail.com" method="POST" />
                     <div class="userComment">
                         <div class="formTop">
@@ -185,7 +186,6 @@
                         <button class="button" type="submit">Submit</button>
                     </div>
                 </form>      
-                <a class="emailContact" href="mailto:">contact@sethpoulin.com</a> 
             </div>
         </section>
     </main>
@@ -201,7 +201,7 @@
                     </i></a></li>
                     <li><a target="blank" href="https://medium.com/@seth.poulin"><i class="fab fa-medium"><span class="visuallyHidden">Seth's Medium blog</span></i></a></li>
                     <li><a target="blank" href="https://github.com/sethPoulin"><i class="fab fa-github"><span class="visuallyHidden">Seth's Github repository</span></i></a></li>
-                    <!-- <li><a target="blank" href="mailto:contact@sethpoulin.com"><i class="far fa-envelope"></i><span class="visuallyHidden">Email Seth</span></i></a></li> -->
+                    <!-- <li><a target="blank" href="seth.poulin@gmail.com"><i class="far fa-envelope"></i><span class="visuallyHidden">Email Seth</span></i></a></li> -->
                 </ul>
             </nav>
         </div>
@@ -215,38 +215,8 @@
     
     <script>
         $(function(){
-    
-            // $('.exit').click(function(){
-            //     $(this).removeClass('block');
-            //     $('.gallery-item').removeClass('show');
-            //     $(this).fadeTo(500,0.01);
-            // });
-
-            // $('header .hamburger').click(function(){
-            //     $('header nav ul').addClass("visible");
-            //     $('.header-exit').addClass('block');
-            //     // $(this).addClass("display-none");
-            // });
-
-            // $('header nav li').click(function(){
-            //     $('header nav ul').removeClass('visible');
-            //     $('.header-exit').removeClass('block');
-            // });
-
-            // $('.header-exit').click(function(){
-            //     $('header nav ul').removeClass('visible');
-            //     $(this).removeClass('block');
-            // })
-
             $('a').smoothScroll();
-
             $('a.contactLink').smoothScroll({offset: 60});
-
-            // $('a.about').smoothScroll({offset: -100});
-
-
-
-            // $('a.resume').smoothScroll({offset: -100});
         });
     </script>	
 </body>
