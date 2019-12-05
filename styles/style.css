@@ -329,6 +329,14 @@ body {
           flex-direction: row-reverse;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
 h1 {
   color: white;
 }
@@ -969,9 +977,71 @@ header svg.chevron {
 }
 
 .skills {
-  background-color: #c7c7c7;
+  background-color: #040d10;
   text-align: center;
   padding: 80px;
+  padding-bottom: 140px;
+}
+
+.skills h3 {
+  position: relative;
+  padding-bottom: 90px;
+  line-height: 26px;
+  color: white;
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+@media (max-width: 792px) {
+  .skills h3 {
+    text-align: center;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+}
+
+@media (max-width: 400px) {
+  .skills h3 {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+.skills h3::after {
+  content: '';
+  height: 5px;
+  width: 100px;
+  background-color: #a1b541;
+  position: absolute;
+  top: 22px;
+  margin-left: 5px;
+}
+
+@media (max-width: 400px) {
+  .skills h3::after {
+    width: 0;
+  }
+}
+
+.skills .fab, .skills .devicon {
+  font-size: 6rem;
+  padding: 10px;
+  color: white;
+}
+
+.skills svg {
+  -webkit-transform: scale(3) translateY(6px);
+          transform: scale(3) translateY(6px);
+}
+
+.skills .firebase {
+  width: 6rem;
+}
+
+.web-icons {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .contact {

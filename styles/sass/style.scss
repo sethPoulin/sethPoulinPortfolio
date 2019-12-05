@@ -25,6 +25,14 @@ body {
     flex-direction: row-reverse;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
 h1 {
     @extend %h1;
     color: white;
@@ -695,11 +703,68 @@ header {
     }
 }
 
+// ============== skills styles ========================
+
 .skills {
-    background-color: $midGrey;
+    background-color: $veryDarkBlue;
     text-align: center;
     padding: 80px;
+    padding-bottom: 140px;
+
+    h3 {
+        position: relative;
+        padding-bottom: 90px;
+        line-height: 26px;
+        color: white;
+        transform: translateX(-50px);
+
+
+        @media(max-width:792px){ 
+            text-align: center;
+            transform: translateX(-50px);
+        }
+
+        @media(max-width:400px){ 
+            transform: translateX(0px);
+        }
+        
+
+        &::after {
+            content: '';
+            height: 5px;
+            width: 100px;
+            background-color: $green;
+            position: absolute;
+            top: 22px;
+            margin-left: 5px;
+
+            @media(max-width:400px){ 
+                width: 0;
+            }
+        }
+    }
+
+
+    .fab, .devicon {
+        font-size: 6rem;
+        padding: 10px;
+        color: white;
+    }
+
+    svg {
+        transform: scale(3.0) translateY(6px);
+    }
+
+    .firebase {
+        width: 6rem;
+    }
+}.web-icons {
+    justify-content: space-between;
 }
+
+
+
+
 // ===================== contact styles =========================
 .contact {
 

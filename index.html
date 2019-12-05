@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Seth Poulin</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto:100,300,400,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <script src="https://kit.fontawesome.com/932a800d03.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -82,6 +83,24 @@
         
         <section id="work" class="work">
             <h3>Work</h3>
+            <div class="earTrainer">
+                <div class="wrapper flexReverse">
+                    <div class="imageContainer right">
+                        <img src="/assets/musicTutorDesktop.png" alt="A computer displaying the Ear Training Tutor home page.">  
+                    </div>
+                    <div class="copy left">
+                        <div class="headerAndDescription">
+                            <h4>Ear Training Tutor</h4>
+                            <p>Self-guided and built entirely in Vanilla JS. Audio files are mapped to a piano SVG.The app then picks a random note and assigns a CSS class to indicate the note on the piano, then plays a second note which the user must correctly identify. <span class="italic">Responsive version in progress.</span></p>
+                            <h5>JavaScript, HTML5, CSS3, Sass.</h5>
+                        </div>
+                        <div class="skillsAndButtons">
+                            <a target="blank" href="https://project5-recycling.web.app" class="button">Live Site</a>
+                            <a target="blank" href="https://github.com/sethPoulin/sethPoulinProject5" class="button">Github</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="CanIRecycle">
                 <div class="wrapper flex">
                     <div class="imageContainer left">
@@ -90,7 +109,7 @@
                     <div class="copy right">
                         <div class="headerAndDescription">
                             <h4>Can I Recycle?</h4>
-                            <p>A recycling helper app that allows users to enter an item and find out whether it's recyclable in the City of Toronto, and how to recycle it if it is.  Built using React, Firebase and JavaScript.</p>
+                            <p>A recycling helper app built in React which accesses a JSON object in Firebase.  An autocomplete input allows users to easily search 2600+ items to find out how to properly dispose of them within the City of Toronto.</p>
                             <h5>React, Firebase, JavaScript, HTML5, CSS3, Sass.</h5>
                         </div>
                         <div class="skillsAndButtons">
@@ -157,9 +176,22 @@
                 </div>
             </div>
         </section>  <!-- ===========end work section============= -->
-        <!-- <section class="skills" id="skills">
-            <h1>skilz</h1>
-        </section> -->
+        <section class="skills">
+            <h3>Skills</h3>
+            <div class="web-icons wrapper flex">
+                <p><i class="fab fa-html5"></i><span class="visuallyHidden">HTML</span></p>
+                <p><i class="fab fa-css3-alt"></i><span class="visuallyHidden">CSS</span></p>
+                <p><i class="fab fa-sass"></i><span class="visuallyHidden">SASS</span></p>
+                <p><i class="fab fa-js"></i>  <span class="visuallyHidden">JavaScript</span></p>
+                <p><i class="devicon devicon-jquery-plain-wordmark"></i>  <span class="visuallyHidden">jQuery</span></p>
+                <p><i class="fab fa-react"></i>  <span class="visuallyHidden">React</span></p>
+                <div class="firebase"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M28.66667,132.58333l54.5885,-102.35433c1.15025,-2.15717 4.26058,-2.11775 5.3535,0.07167l18.89133,37.78267z" fill="#cccccc"></path><path d="M28.66667,132.55467l19.87317,-122.54642c0.51958,-3.20708 4.82675,-3.90225 6.33175,-1.02125l38.29508,73.401z" fill="#cccccc"></path><path d="M28.69533,132.53317l0.71667,-0.56258l62.81225,-51.38858l-17.716,-33.95567z" fill="#666666"></path><path d="M28.66667,132.58333l95.55317,-92.13825c2.00308,-1.93142 5.34633,-0.79192 5.75483,1.96008l13.35867,90.17817l-53.75,31.32908c-2.18225,1.2255 -4.84467,1.2255 -7.02692,0z" fill="#cccccc"></path></g></g></svg>  <span class="visuallyHidden">Firebase</span></div>
+                <p><i class="fab fa-github"></i>  <span class="visuallyHidden">Github</span></p>
+                <p><i class="fab fa-git-alt"></i>  <span class="visuallyHidden">Git</span></p>
+                <i class="devicon devicon-trello-plain"></i>
+                <!-- <i class="devicon devicon-trello-plain-wordmark"></i> -->
+            </div>
+        </section>
         <section class="contact" id="contact">
             <div class="wrapper">
                 <h3>Get in touch</h3>
