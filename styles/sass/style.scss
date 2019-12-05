@@ -10,7 +10,6 @@ body {
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
-    // background-color: red;
 }
 
 .skip-link { position: absolute; left: -1000px; top: 5px; z-index: 999; background: white; color: black;}.skip-link:focus {left: 0;}
@@ -45,7 +44,6 @@ h2 {
 h3 {
     @extend %h3;
     color: black;
-
 }
 
 h4 {
@@ -58,28 +56,22 @@ h5 {
 
 a {
     @extend %a;
-    
 }
 
 a.button, button {
     border-style: none;
     color: white;
-    // color: black;
     outline: none;
     display: inline-block;
     padding: 13px 28px;
     background-color: transparent;
-    // background-color: $green;
     max-width: 240px;
     margin: 0 auto;
     margin-top: 20px;
     border: 2px solid white;
-    // border: 2px solid $green;
     &:hover {
         background-color: $green;
-        // background-color: white;
         color: white;
-        // color: $darkGrey;
         border: 2px solid $green;
     }
 
@@ -89,8 +81,6 @@ a.button, button {
         display: block;
         max-width: unset;
     }
-    // text-align: center;
-
 }
 
 p, label, button {
@@ -105,8 +95,8 @@ li {
     @extend %wrapper;
 }
 
-
 // ================header styles======================
+
 header {
     display: flex;
     flex-direction: column;
@@ -114,32 +104,16 @@ header {
     text-align: center;
     height: 100vh;
     min-height: 680px;
-    // max-height: 665px;
     width: 100%;
     position: relative;
-
-    
-    // position: relative;
-
-    // * {
-    //     @include border;
-    // }
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    // background-color: $darkGrey;
     
     .wrapper {
         @media(max-width: 480px) {
             width: 90%;
         }
     }
-    
-    
-    
 
-    
-    // .wrapper {
-    //     // position: relative;
-    // }
     .navBar {
         position: absolute;
         left: 0;
@@ -161,13 +135,8 @@ header {
         }
 
         @media(max-width:330px){
-            // padding:7px;
-            // transform: translateX(-4%);
             left: -35px;
-            // width: 95%;
         }
-
-
     }
 
     nav {
@@ -209,11 +178,6 @@ header {
         }
     }
 
-
-    // p.logo {
-    //     font-size: 3rem;
-    // }
-
     a:not(.chevron) {
         padding: 10px 10px 10px 30px;
 
@@ -229,10 +193,6 @@ header {
             font-size: 1.4rem;
         }
 
-        // @media(max-width: 480px){
-        //     padding-left:10px;
-        // }
-        
         &::after{
             content: '';
             height: 2px;
@@ -252,13 +212,10 @@ header {
                 opacity: 1;
             }
         }
-    
-        
     }
     
 
     h1 {
-        // margin-top: 30px;
         padding-bottom: 30px;
 
         @media(max-width:681px){
@@ -306,27 +263,16 @@ header {
         width: 50px;
         fill: none;
         stroke: white;
-        stroke-width: 10px; 
-        // transform: rotateZ(90deg);
-        
+        stroke-width: 10px;         
     }
 
     a.logo {
         padding: 0;
-        // padding-top: 0;
-        // @extend %underline;
         position: relative;
         left: 0;
         right: 0;
-
-        
-        // &::after {
-        //     // opacity: 1;
-        //     transform: translateX(-15%);
-        //     width: 140%;
-        //     // transition: 0.2s;
-        // }
     }
+
     // Hi! I'm Seth. I like...
     p {
         margin-bottom: 30px;
@@ -342,33 +288,21 @@ header {
         width: 100px;
 
         &:hover svg.chevron {
-            // fill: rgba(255,255,255,0.3);
-            // fill: rgba(255,255,255,0.9);
             fill: $green;
         }
     }
 
     svg.chevron {
         width: 50px;
-        // fill: $green;
         fill: rgba(255,255,255,0.3);
-        // stroke: white;
         stroke-width: 10px;
         transition: 0.2s; 
     }
-
-    // svg::after {
-        
-    // } 
 }  
 // ======================about styles==============================
+
 .about {
-
-
-    // background-color: rgb(65, 124, 148);
-    // background: linear-gradient(to top, #00b4db, #0083b0);
     background: linear-gradient(to bottom, #2f5768, #1f3b45);
-    // background-color: whitesmoke;
     padding: 100px 0;
 
     .wrapper {
@@ -376,7 +310,6 @@ header {
     }
 
     p {
-        // color: black;
         color: white;
         line-height:2.8rem;
     }
@@ -395,7 +328,6 @@ header {
             transform: translateX(0px);
         }
         
-
         &::after {
             content: '';
             height: 5px;
@@ -422,7 +354,6 @@ header {
 
     .aboutPhoto {
         width: 40%;
-        // margin: 0 auto;
         display: flex;
         justify-content: center;
 
@@ -432,60 +363,26 @@ header {
     }
 
     .photoContainer {
-        // border: 2px solid black;
         height: 300px;
         width: 240px;
         margin-top: 12px;
         overflow: hidden;
         margin-right: 40px;
-        // box-shadow: 8px 8px 6px -6px #777;
         box-shadow: -12px -12px $green;
-        // box-shadow: -12px -12px $darkGrey;
-        // box-shadow: -12px -12px white;
 
         @media(max-width: 857px){
             width: unset;
         }
 
-        
-
         img {
             max-width: 100%;
-            // min-width: 240px;
             transform: scale(1.3);
             object-fit:cover;
             object-position: 10px -20px;
-            // transform: translateX(10px)
-
-            // @media(max-width: 885px){
-            //     height:
-            // }
-
-            // @media (max-width:760px){
-            //     transform: scale(1.5);
-            //     // object-fit: cover;
-            //     object-position: 10px 0px;
-            //     width: 100%;
-            // }
-
-            // @media (max-width:700px){
-            //     transform: scale(1.7);
-            //     // object-fit: cover;
-            //     object-position: 10px 0px;
-            //     width: 100%;
-            // }
 
             @media (max-width:792px){
                 display: none;
             }
-
-            // @media (max-width:667px){
-            //     display: none;
-            // }
-
-
-
-
         }
     }
 
@@ -503,23 +400,16 @@ header {
         margin: unset;
         margin-top: 30px;
     }
-
-    
 }
 // ================ work styles =====================
 
 .work {
 
-    // background-color: $midGrey;
-    // background: linear-gradient(180deg, rgb(136, 166, 179) 0%, rgba(34,63,77,1) 100%);
     background: linear-gradient(180deg,#0c232b 0%, #3e6071 100%);
-    // background: rgb(136, 166, 179);
-    // background: rgb(12, 35, 43);
 
     h3 {
         padding-top: 70px;
         text-align: center;
-        // padding-bottom: 30px;
         color: white;
         position: relative;
         transform: translateX(-50px);
@@ -565,7 +455,6 @@ header {
             position: absolute;
             bottom: -4px;
             right:20%;
-            // margin-left: 5px;
         }
 
         @media(max-width: 885px){
@@ -597,7 +486,6 @@ header {
     }
 
     h5 {
-        // color: white;
         color: $green;
         padding-top: 10px;
 
@@ -626,9 +514,7 @@ header {
     }
 
     .imageContainer {
-        // border: 1px solid tomato;
         width: 50%;
-        // *{border: 1px solid tomato;}
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -640,7 +526,6 @@ header {
 
     .copy {
         width: 50%;
-        // padding: 30px;
         min-height: 440px;
         padding: 40px;
         padding-top: 80px;
@@ -657,15 +542,12 @@ header {
         }
     }
 
-
     img {
         max-width: 130%;
         object-fit: cover;
     }
 
     .button {
-        // background-color: $darkGrey;
-        // background-color: transparent;
         color: white;
         margin-right: 10px;
 
@@ -674,12 +556,6 @@ header {
         }
     }
 
-    // .memoryGame, .sanctuaryHelpers {
-    //     // background-color: whitesmoke;
-    //     background-color: rgb(62, 96, 113);
-        
-    // }
-
     .copy.left {
         padding-left: 0;
     }
@@ -687,10 +563,6 @@ header {
     .copy.right {
         padding-right: 0;
     }
-
-    // .sanctuaryHelpers h4 {
-    //     max-width: 400px;
-    // }
 }
 
 .skillsAndButtons {
@@ -717,7 +589,6 @@ header {
         line-height: 26px;
         color: white;
         transform: translateX(-50px);
-
 
         @media(max-width:792px){ 
             text-align: center;
@@ -758,20 +629,16 @@ header {
     .firebase {
         width: 6rem;
     }
-}.web-icons {
+}
+
+.web-icons {
     justify-content: space-between;
 }
 
-
-
-
 // ===================== contact styles =========================
 .contact {
-
-    // * {border: 1px solid tomato}
     margin: 0 auto;
     padding: 100px 0;
-    // background-color: $darkGrey;
     background-color: $darkBlue;
     
     .wrapper {
@@ -788,7 +655,6 @@ header {
         transform: translateX(-50px);
 
         @media(max-width: 445px) {
-            // text-align: center;
             margin: 0 auto;
             width: 100%;
             transform: unset;
@@ -823,7 +689,6 @@ header {
             flex-direction: column;
         }
     }
-
 
     label {
         // width: auto;
@@ -882,8 +747,6 @@ header {
                 padding-right: 10px;
             }
         }
-
-    
     }
 
     .comment {
@@ -968,8 +831,6 @@ header {
             color: $green;
         }
     }
-
-    
 }
 
 footer {
@@ -1000,7 +861,6 @@ footer {
 
         &:hover i {
             color: $green;
-
         }
     }
 
@@ -1011,8 +871,5 @@ footer {
 
     p {
         font-size: 1.4rem;
-        // padding-bottom: 0px;
-        // text-transform: uppercase;
     }
-
 }
