@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    max-width: 1280px;
+    max-width: 1920px;
     width: 100%;
     margin: 0 auto;
     // background-color: red;
@@ -20,9 +20,17 @@ body {
     flex-wrap: wrap;
 }
 
-.wrapper {
-    width: 80%;
-    margin: 0 auto;
+.flexReverse {
+    @extend .flex;
+    flex-direction: row-reverse;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
 }
 
 h1 {
@@ -37,6 +45,7 @@ h2 {
 h3 {
     @extend %h3;
     color: black;
+
 }
 
 h4 {
@@ -52,32 +61,39 @@ a {
     
 }
 
-a.button {
+a.button, button {
     border-style: none;
     color: white;
     // color: black;
     outline: none;
     display: inline-block;
     padding: 13px 28px;
-    background-color: $darkGrey;
+    background-color: transparent;
     // background-color: $green;
     max-width: 240px;
     margin: 0 auto;
     margin-top: 20px;
-    // border: 2px solid white;
+    border: 2px solid white;
     // border: 2px solid $green;
     &:hover {
         background-color: $green;
         // background-color: white;
         color: white;
         // color: $darkGrey;
-        // border: 2px solid $green;
+        border: 2px solid $green;
+    }
+
+    @media(max-width: 394px) {
+        width: 100%;
+        text-align: center;
+        display: block;
+        max-width: unset;
     }
     // text-align: center;
 
 }
 
-p {
+p, label, button {
     @extend %p;
 }
 
@@ -85,22 +101,45 @@ li {
     padding-bottom: 0;
 }
 
+.wrapper {
+    @extend %wrapper;
+}
 
 
+// ================header styles======================
 header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 90vh;
+    height: 100vh;
+    min-height: 680px;
+    // max-height: 665px;
     width: 100%;
     position: relative;
+
+    
+    // position: relative;
 
     // * {
     //     @include border;
     // }
-    background-color: $darkGrey;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    // background-color: $darkGrey;
+    
+    .wrapper {
+        @media(max-width: 480px) {
+            width: 90%;
+        }
+    }
+    
+    
+    
 
+    
+    // .wrapper {
+    //     // position: relative;
+    // }
     .navBar {
         position: absolute;
         left: 0;
@@ -111,23 +150,48 @@ header {
         width: 80%;
         margin: 0 auto;
         padding-top: 20px;
+
+        &.show {
+            position: fixed;
+            top: 0;
+        }
+
+        @media(max-width: 480px){
+            width: 90%;
+        }
+
+        @media(max-width:330px){
+            // padding:7px;
+            // transform: translateX(-4%);
+            left: -35px;
+            // width: 95%;
+        }
+
+
     }
 
     nav {
         flex-basis: 50%;
-        // flex-shrink: 1;
     }
 
     .navBarLeft {
         flex-basis: 50%;
         flex-shrink: 1;
         text-align: left;
+
+        @media(max-width:776px) {
+            display: none;
+        }
+    }
+
+    .navBarRight {
+        flex-grow: 1;  
+        width: 100%;
     }
 
     ul {
         display: flex;
         justify-content: space-between;
-        // width: 100%; 
     }
 
     li {
@@ -135,7 +199,16 @@ header {
         flex-direction: column;
         justify-content: center;
         position: relative;
+
+        @media(max-width: 710px) {
+            padding-bottom: 15px;
+        }
+
+        @media(max-width: 480px) {
+            padding-bottom: 0;
+        }
     }
+
 
     // p.logo {
     //     font-size: 3rem;
@@ -143,18 +216,77 @@ header {
 
     a:not(.chevron) {
         padding: 10px 10px 10px 30px;
-        @extend %underline;
+
+        @media(max-width:774px){
+            padding: 10px;
+        }
+
+        @media(max-width:380px){
+            font-size: 1.5rem;
+        }
+
+        @media(max-width:364px){
+            font-size: 1.4rem;
+        }
+
+        // @media(max-width: 480px){
+        //     padding-left:10px;
+        // }
+        
+        &::after{
+            content: '';
+            height: 2px;
+            width: 80%;
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            left: 0;
+            background-color: $green;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: 0.2s;
+        }
+
+        @media(min-width:711px) {
+            &:hover::after { 
+                opacity: 1;
+            }
+        }
+    
+        
     }
     
 
     h1 {
         // margin-top: 30px;
         padding-bottom: 30px;
+
+        @media(max-width:681px){
+            max-width:250px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @media(max-width:440px){
+            font-size:4.5rem;
+            line-height: 5rem;
+        }
     }
 
     h2 {
+        margin: 0 auto;
         margin-bottom: 45px;
         position: relative;
+        text-align: center;
+
+        @media(max-width:739px){
+            max-width:280px;
+        }
+
+        @media(max-width:440px){
+            font-size: 2.2rem;
+            letter-spacing: .5rem;
+        }
 
         &::after {
             content: '';
@@ -166,12 +298,8 @@ header {
             margin: 0 auto;
             background-color: $green;
             height: 4px;
-
         }
     }
-
-   
-
 
 
     svg.logo {
@@ -179,29 +307,30 @@ header {
         fill: none;
         stroke: white;
         stroke-width: 10px; 
+        // transform: rotateZ(90deg);
         
     }
 
     a.logo {
         padding: 0;
         // padding-top: 0;
-        @extend %underline;
+        // @extend %underline;
         position: relative;
         left: 0;
         right: 0;
 
         
-        &::after {
-            // opacity: 1;
-            transform: translateX(-15%);
-            width: 140%;
-            // transition: 0.2s;
-        }
+        // &::after {
+        //     // opacity: 1;
+        //     transform: translateX(-15%);
+        //     width: 140%;
+        //     // transition: 0.2s;
+        // }
     }
-
+    // Hi! I'm Seth. I like...
     p {
         margin-bottom: 30px;
-        max-width: 530px;
+        max-width: 510px;
         margin: 0 auto;
     }
 
@@ -213,12 +342,15 @@ header {
         width: 100px;
 
         &:hover svg.chevron {
+            // fill: rgba(255,255,255,0.3);
+            // fill: rgba(255,255,255,0.9);
             fill: $green;
         }
     }
 
     svg.chevron {
         width: 50px;
+        // fill: $green;
         fill: rgba(255,255,255,0.3);
         // stroke: white;
         stroke-width: 10px;
@@ -229,10 +361,14 @@ header {
         
     // } 
 }  
-
+// ======================about styles==============================
 .about {
 
-    background-color: whitesmoke;
+
+    // background-color: rgb(65, 124, 148);
+    // background: linear-gradient(to top, #00b4db, #0083b0);
+    background: linear-gradient(to bottom, #2f5768, #1f3b45);
+    // background-color: whitesmoke;
     padding: 100px 0;
 
     .wrapper {
@@ -240,16 +376,48 @@ header {
     }
 
     p {
-        color: black;
+        // color: black;
+        color: white;
         line-height:2.8rem;
     }
 
     h3 {
         padding-bottom: 30px;
+        line-height: 26px;
+        color: white;
+
+        @media(max-width:792px){ 
+            text-align: center;
+            transform: translateX(-50px);
+        }
+
+        @media(max-width:400px){ 
+            transform: translateX(0px);
+        }
+        
+
+        &::after {
+            content: '';
+            height: 5px;
+            width: 100px;
+            background-color: $green;
+            position: absolute;
+            top: 22px;
+            margin-left: 5px;
+
+            @media(max-width:400px){ 
+                width: 0;
+            }
+        }
     }
 
     .aboutCopy {
         width: 60%;
+        position: relative;
+
+        @media (max-width:792px){
+            width: 100%;
+        }
     }
 
     .aboutPhoto {
@@ -257,60 +425,204 @@ header {
         // margin: 0 auto;
         display: flex;
         justify-content: center;
+
+        @media (max-width:792px){
+            display: none;
+        }
     }
 
     .photoContainer {
         // border: 2px solid black;
-        height: 240px;
-        width: 220px;
-        margin-top: 72px;
+        height: 300px;
+        width: 240px;
+        margin-top: 12px;
         overflow: hidden;
+        margin-right: 40px;
         // box-shadow: 8px 8px 6px -6px #777;
         box-shadow: -12px -12px $green;
         // box-shadow: -12px -12px $darkGrey;
         // box-shadow: -12px -12px white;
 
+        @media(max-width: 857px){
+            width: unset;
+        }
+
+        
+
         img {
             max-width: 100%;
-            transform: scale(1.6);
-            object-position: 10px;
+            // min-width: 240px;
+            transform: scale(1.3);
+            object-fit:cover;
+            object-position: 10px -20px;
             // transform: translateX(10px)
+
+            // @media(max-width: 885px){
+            //     height:
+            // }
+
+            // @media (max-width:760px){
+            //     transform: scale(1.5);
+            //     // object-fit: cover;
+            //     object-position: 10px 0px;
+            //     width: 100%;
+            // }
+
+            // @media (max-width:700px){
+            //     transform: scale(1.7);
+            //     // object-fit: cover;
+            //     object-position: 10px 0px;
+            //     width: 100%;
+            // }
+
+            @media (max-width:792px){
+                display: none;
+            }
+
+            // @media (max-width:667px){
+            //     display: none;
+            // }
+
+
+
+
         }
     }
 
     .copyAndButton {
         display: flex;
         flex-wrap: wrap;
-        // height: 200px;
         justify-content: left;
+
+        p:first-child {
+            padding-bottom: 10px;
+        }
     }
 
     .button {
         margin: unset;
         margin-top: 30px;
     }
+
+    
 }
+// ================ work styles =====================
 
 .work {
 
-    background-color: $midGrey;
+    // background-color: $midGrey;
+    // background: linear-gradient(180deg, rgb(136, 166, 179) 0%, rgba(34,63,77,1) 100%);
+    background: linear-gradient(180deg,#0c232b 0%, #3e6071 100%);
+    // background: rgb(136, 166, 179);
+    // background: rgb(12, 35, 43);
+
+    h3 {
+        padding-top: 70px;
+        text-align: center;
+        // padding-bottom: 30px;
+        color: white;
+        position: relative;
+        transform: translateX(-50px);
+
+        @media(max-width:885px){
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        &::after {
+            content: '';
+            height: 5px;
+            width: 100px;
+            background-color: $green;
+            position: absolute;
+            bottom: 20px;
+            margin-left: 5px;
+
+            @media(max-width:885px){
+                bottom: 60px;
+            }
+        }
+    }
+    
 
     .wrapper {
         width: 80%;
         margin: 0 auto;
         min-height: 500px;
+        padding: 60px 0 100px 0;
+        position: relative;
+
+        @media(max-width: 885px){
+            display: block;
+        }
+
+        //green separator lines in work section 
+        &:not(.last)::after {
+            content: '';
+            height: 5px;
+            width: 60%;
+            background-color: $green;
+            position: absolute;
+            bottom: -4px;
+            right:20%;
+            // margin-left: 5px;
+        }
+
+        @media(max-width: 885px){
+            padding: 60px 0;
+        }
     }
 
-    // *{border: 1px solid tomato}
+    .canIRecycle .wrapper {
+        padding-top: 0px;
+    }
 
+    // work titles e.g. What's For Dinner
     h4 {
         padding-bottom: 15px;
+        color: white;
+
+        @media(max-width: 1145px){
+            font-size: 2.8rem;
+        }
+
+        @media(max-width: 990px){
+            font-size: 2.4rem;
+            padding-bottom: 0;
+        }
+
+        @media(max-width: 885px){
+            text-align: center;
+        }
+    }
+
+    h5 {
+        // color: white;
+        color: $green;
+        padding-top: 10px;
+
+        @media(max-width: 885px){
+            text-align: center;
+        }
     }
 
     p {
-        color: black;
+        color: white;
         letter-spacing: 0.1rem;
 
+        @media(max-width: 885px){
+            text-align: center;
+        }
+
+        @media(max-width: 500px){
+            text-align: left;
+        }
+    }
+
+    .headerAndDescription a {
+        @extend %p;
+        text-decoration: underline;
+        text-transform: unset;
     }
 
     .imageContainer {
@@ -320,11 +632,16 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @media(max-width: 885px){
+            width: 100%;
+        }
     }
 
     .copy {
         width: 50%;
         // padding: 30px;
+        min-height: 440px;
         padding: 40px;
         padding-top: 80px;
         padding-bottom: 80px;
@@ -333,20 +650,13 @@ header {
         flex-direction: column;
         justify-content: space-between;
 
-        // &::after {
-        //     content: '';
-        //     position: absolute;
-        //     right: 19px;
-        //     left: 10px;
-        //     bottom: 150px;
-        //     top: 24px;
-        //     background-color: rgba(255, 255, 255, 0.1);
-        // }
+        @media(max-width: 885px){
+            width: 100%;
+            padding: 0;
+            min-height: unset;
+        }
     }
 
-    // .skillsAndButtons {
-    //     padding-bottom: 30px;
-    // }
 
     img {
         max-width: 130%;
@@ -354,14 +664,21 @@ header {
     }
 
     .button {
-        background-color: $darkGrey;
+        // background-color: $darkGrey;
+        // background-color: transparent;
         color: white;
         margin-right: 10px;
+
+        &:hover {
+            border: 2px solid $green;
+        }
     }
 
-    .memoryGame, .sanctuaryHelpers {
-        background-color: whitesmoke;
-    }
+    // .memoryGame, .sanctuaryHelpers {
+    //     // background-color: whitesmoke;
+    //     background-color: rgb(62, 96, 113);
+        
+    // }
 
     .copy.left {
         padding-left: 0;
@@ -374,5 +691,328 @@ header {
     // .sanctuaryHelpers h4 {
     //     max-width: 400px;
     // }
+}
+
+.skillsAndButtons {
+    @media(max-width: 885px){
+        margin: 0 auto;
+    }
+
+    @media(max-width: 394px){
+        width: 100%;
+    }
+}
+
+// ============== skills styles ========================
+
+.skills {
+    background-color: $veryDarkBlue;
+    text-align: center;
+    padding: 80px;
+    padding-bottom: 140px;
+
+    h3 {
+        position: relative;
+        padding-bottom: 90px;
+        line-height: 26px;
+        color: white;
+        transform: translateX(-50px);
+
+
+        @media(max-width:792px){ 
+            text-align: center;
+            transform: translateX(-50px);
+        }
+
+        @media(max-width:400px){ 
+            transform: translateX(0px);
+        }
+        
+
+        &::after {
+            content: '';
+            height: 5px;
+            width: 100px;
+            background-color: $green;
+            position: absolute;
+            top: 22px;
+            margin-left: 5px;
+
+            @media(max-width:400px){ 
+                width: 0;
+            }
+        }
+    }
+
+
+    .fab, .devicon {
+        font-size: 6rem;
+        padding: 10px;
+        color: white;
+    }
+
+    svg {
+        transform: scale(3.0) translateY(6px);
+    }
+
+    .firebase {
+        width: 6rem;
+    }
+}.web-icons {
+    justify-content: space-between;
+}
+
+
+
+
+// ===================== contact styles =========================
+.contact {
+
+    // * {border: 1px solid tomato}
+    margin: 0 auto;
+    padding: 100px 0;
+    // background-color: $darkGrey;
+    background-color: $darkBlue;
+    
+    .wrapper {
+        width: 80%;
+        max-width: 80%;
+        position: relative;
+    }
+
+    h3 {
+        padding-bottom: 5px;
+        text-align: center;
+        color: white;
+        position: relative;
+        transform: translateX(-50px);
+
+        @media(max-width: 445px) {
+            // text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            transform: unset;
+        }
+        
+        // green line on get in touch
+        &::after {
+            content: '';
+            height: 5px;
+            width: 100px;
+            background-color: $green;
+            position: absolute;
+            bottom: 25px;
+            margin-left: 5px;
+            
+            @media(max-width: 445px) {
+                display: none;
+            }
+        }
+    }
+    // "I'd love to discuss ideas..."
+    p {
+        text-align: center;
+        max-width: 510px;
+        margin: 20px auto 0;
+    }
+
+    .formTop {
+        display: flex;
+
+        @media(max-width:1073px){
+            flex-direction: column;
+        }
+    }
+
+
+    label {
+        // width: auto;
+        position: absolute;
+        padding-bottom: 5px;
+        bottom: 0;
+        padding-right: 20px;
+        text-transform: uppercase;
+    }
+
+    label[for=name]{
+        
+        @media(max-width:1073px){
+            bottom: 15px; 
+        }
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .name, .email {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        @media(max-width:1073px){
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+    
+    .name {
+
+        padding-right: 20px;
+
+        @media(max-width:1073px){
+            padding-right: 0;
+            padding-bottom: 15px;
+        }
+    }
+
+    .email {
+
+        input {
+            padding-left: 70px;
+            padding-bottom: 3px;
+        }
+
+        @media(max-width:1073px){
+            padding-right: 0;
+            padding-left: 0;
+
+        label {
+                padding-right: 10px;
+            }
+        }
+
+    
+    }
+
+    .comment {
+        padding-top: 30px;
+        display: flex;
+        position: relative;
+
+        label {
+            top: 43px;
+            bottom: unset;
+            padding-left: 10px;
+        }
+
+        textarea {
+            @extend %p;
+            flex-grow: 1;
+            padding-left: 120px;
+            padding-top: 10px;
+            background-color: transparent;
+            border-bottom: none;
+            border: 2px solid white;
+            height: 200px;
+            resize: none;  
+        }
+    }
+
+    input {
+        @extend %p;
+        padding-left: 70px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid white;
+        flex-grow: 1;
+    }
+
+
+    button {
+        @extend %a;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 25%;
+        min-width: 200px;
+        max-width: unset;
+        margin-top: 30px;
+
+        @media(max-width:740px){
+            position: static;
+            width: 100%;
+        }
+
+        &:hover {
+            border: 2px solid $green;
+        }
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: right;
+        width: 100%;
+
+        @media(max-width:740px){
+            padding-bottom: 20px;
+        }
+    }
+
+    // contact@sethpoulin.com (this is an <a> tag)
+    .emailContact {
+        margin: 30px auto;
+        text-align: center;
+        display: block;
+        padding-bottom: 40px;
+        width: 100%;
+
+        @media(max-width:740px){
+            position: static;
+            display: block;
+            text-align: center;
+        }
+
+        &:hover {
+            color: $green;
+        }
+    }
+
+    
+}
+
+footer {
+    background-color: black;
+    padding: 5px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        padding: 13px 0 13px 0;
+    }
+
+    ul {
+        display: flex;
+    }
+
+    li {
+        padding: 15px 20px 10px 20px;
+
+        &:hover i {
+            color: $green;
+
+        }
+    }
+
+    i {
+        font-size:2.5rem;
+        transition: 0.2s;
+    }
+
+    p {
+        font-size: 1.4rem;
+        // padding-bottom: 0px;
+        // text-transform: uppercase;
+    }
 
 }
