@@ -983,6 +983,30 @@ header svg.chevron {
   padding-bottom: 140px;
 }
 
+@media (max-width: 449px) {
+  .skills {
+    padding: 20px;
+    padding-bottom: 140px;
+  }
+}
+
+.skills .top-icons,
+.skills .bottom-icons {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.skills .web-icons {
+  max-width: 70%;
+}
+
 .skills h3 {
   position: relative;
   padding-bottom: 90px;
@@ -1025,23 +1049,18 @@ header svg.chevron {
 
 .skills .fab, .skills .devicon {
   font-size: 6rem;
-  padding: 10px;
+  padding: 15px;
   color: white;
+  margin-bottom: 20px;
 }
 
-.skills svg {
-  -webkit-transform: scale(3) translateY(6px);
-          transform: scale(3) translateY(6px);
+.skills .devicon-jquery-plain-wordmark {
+  position: relative;
+  bottom: -15px;
 }
 
-.skills .firebase {
-  width: 6rem;
-}
-
-.web-icons {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.skills .devicon-trello-plain {
+  font-size: 5rem;
 }
 
 .contact {

@@ -583,6 +583,27 @@ header {
     padding: 80px;
     padding-bottom: 140px;
 
+    @media(max-width:449px) {
+        padding: 20px;
+        padding-bottom: 140px;
+    }
+
+
+    .top-icons,
+    .bottom-icons {
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        
+    }
+
+    .web-icons {
+        // justify-content: space-between;
+        max-width: 70%;
+    }
+
     h3 {
         position: relative;
         padding-bottom: 90px;
@@ -615,25 +636,26 @@ header {
         }
     }
 
-
     .fab, .devicon {
         font-size: 6rem;
-        padding: 10px;
+        padding: 15px;
         color: white;
+        margin-bottom: 20px;
     }
 
-    svg {
-        transform: scale(3.0) translateY(6px);
+    
+    .devicon-jquery-plain-wordmark {
+        position: relative;
+        bottom: -15px;
     }
 
-    .firebase {
-        width: 6rem;
+    .devicon-trello-plain {
+        font-size: 5rem;
     }
+    
 }
 
-.web-icons {
-    justify-content: space-between;
-}
+
 
 // ===================== contact styles =========================
 .contact {
